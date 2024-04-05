@@ -4,7 +4,7 @@ import pandas as pd
 import requests
 
 st.markdown(
-    """<link rel="stylesheet" href="https://www.example.com/style.css">""",
+    """<link rel="style.css">""",
     unsafe_allow_html=True
 )
 
