@@ -4,7 +4,7 @@ import pandas as pd
 import requests
 
 st.markdown(
-    """<link rel="style.css">""",
+    """<link rel="stylesheet" href="https://www.example.com/style.css">""",
     unsafe_allow_html=True
 )
 
@@ -29,12 +29,12 @@ def recommend(movie):
         recommended_movies_posters.append(fetch_poster(movie_id))
     return recommended_movies, recommended_movies_posters
 
-movies_dict = pickle.load(open('movies_dict.pkl','rb'))
+movies_dict = pickle.load(open('/Users/shreyamhemanta/Documents/Shreyam-Movie-Recommendation/movies_dict.pkl','rb'))
 movies = pd.DataFrame(movies_dict)
 
-similarity = pickle.load(open('https://drive.google.com/file/d/1pG2q1WHNQrDObApOmrvbCduxQSx9dgra/view?usp=sharing','rb'))
+similarity = pickle.load(open('/Users/shreyamhemanta/Documents/Shreyam-Movie-Recommendation/similarity.pkl','rb'))
 
-st.title("Movie Recommender System")
+st.title("Shreyam's Movie Recommender 🎬")
 
 selected_movie = st.selectbox(
     'Which movie recommendation do you want ?',
@@ -53,9 +53,9 @@ if st.button('Recommend'):
     with col3:
         st.text(names[2])
         st.image(posters[2])
-    with col2:
+    with col4:
         st.text(names[3])
         st.image(posters[3])
-    with col3:
+    with col5:
         st.text(names[4])
         st.image(posters[4])
